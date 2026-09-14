@@ -37,6 +37,7 @@
       };
       backgroundImage.src = json.url;
     } else if (/\.(mp4|webm|ogg|mov)(\?.*)?$/i.test(json.url)) {
+      document.body.classList.add('video-mode');
       document.getElementById('container').innerHTML += '<video id="apod-video" autoplay muted loop><source src="' + json.url + '"></video>';
       document.getElementById('error-container').remove();
     } else {
